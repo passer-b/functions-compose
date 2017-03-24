@@ -1,4 +1,8 @@
 # ignore api data dir
 /api
 
+# ignore override configuration
+docker-compose.override.yml
+
+# don't ignore .gitkeep to management empty directory
 !.gitkeep
