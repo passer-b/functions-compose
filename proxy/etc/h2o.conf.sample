@@ -1,0 +1,20 @@
+user: nobody
+hosts:
+  "localhost":
+    listen:
+      port: 80
+    paths:
+      "/":
+        redirect:
+          status: 301
+          url:    "/ui"
+          internal: YES
+      "/ui":
+        proxy.reverse.url: "http://ui:4000/"
+        proxy.preserve-host: ON
+      "/endpoint":
+        proxy.reverse.url: "http://api:8080/"
+        proxy.preserve-host: ON
+
+access-log: /var/log/h2o/access-log
+error-log:  /var/log/h2o/error-log

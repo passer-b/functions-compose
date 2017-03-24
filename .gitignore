@@ -1,6 +1,11 @@
 # ignore api data dir
 /api
 
+# ignore proxy data dir
+/proxy/log/*
+/proxy/etc/*
+!/proxy/etc/h2o.conf.sample
+
 # ignore override configuration
 docker-compose.override.yml
 
