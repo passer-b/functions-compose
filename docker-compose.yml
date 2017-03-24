@@ -12,6 +12,7 @@ services:
       - backend
     hostname:   functions-api
     privileged: true
+    restart: always
   ui:
     image: iron/functions-ui:latest
     ports:
@@ -25,6 +26,7 @@ services:
       API_URL:  "http://api:8080/"
     depends_on:
       - api
+    restart: always
   proxy:
     image: lkwg82/h2o-http2-server
     ports:
@@ -36,6 +38,7 @@ services:
       - backend
     hostname: proxy
     working_dir: /etc/h2o
+    restart: always
 
 networks:
   backend:
