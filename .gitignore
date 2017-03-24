@@ -1,4 +1,4 @@
 # ignore api data dir
-app/data/*
+/api
 
 !.gitkeep
