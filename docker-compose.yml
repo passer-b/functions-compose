@@ -25,6 +25,17 @@ services:
       API_URL:  "http://api:8080/"
     depends_on:
       - api
+  proxy:
+    image: lkwg82/h2o-http2-server
+    ports:
+      - "80:80"
+    volumes:
+      - "./h2o/etc:/etc/h2o"
+      - "./h2o/log:/var/log/h2o"
+    networks:
+      - backend
+    hostname: proxy
+    working_dir: /etc/h2o
 
 networks:
   backend:
