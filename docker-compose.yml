@@ -32,8 +32,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - "./h2o/etc:/etc/h2o"
-      - "./h2o/log:/var/log/h2o"
+      - "./proxy/etc:/etc/h2o"
+      - "./proxy/log:/var/log/h2o"
     networks:
       - backend
     hostname: proxy
