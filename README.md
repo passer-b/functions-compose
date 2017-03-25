@@ -7,6 +7,12 @@ docker-compose.yml for iron-functions
 
 ### Usage
 
-```
+``` bash
+cp proxy/etc/h2o.conf.sample proxy/etc/h2o.conf
+sed -i 's/example\.com/localhost/' proxy/etc/h2o.conf
 docker-compose up -d
 ```
+
+### Screen Shot
+
+![functions-ui](./sample.png)
