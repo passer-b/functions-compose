@@ -1,15 +1,10 @@
 user: nobody
 hosts:
-  "localhost":
+  "localhost": # should override to your.function.host
     listen:
       port: 80
     paths:
       "/":
-        redirect:
-          status: 301
-          url:    "/ui"
-          internal: YES
-      "/ui":
         proxy.reverse.url: "http://ui:4000/"
         proxy.preserve-host: ON
       "/endpoint":

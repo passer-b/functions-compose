@@ -3,8 +3,6 @@ version: "3"
 services:
   api:
     image: iron/functions:0.2.22
-    ports:
-      - "8080:8080"
     volumes:
       - "./api/data:/app/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -15,15 +13,13 @@ services:
     restart: always
   ui:
     image: iron/functions-ui:latest
-    ports:
-      - "4000:4000"
     networks:
       - backend
     hostname:   ui
     privileged: true
     environment:
-      NO_PROXY: "api:8080"
-      API_URL:  "http://api:8080/"
+      NO_PROXY: "api:8080"         # should override to your.function.host:port
+      API_URL:  "http://api:8080/" # should override to http://your.function.host:port/
     depends_on:
       - api
     restart: always
