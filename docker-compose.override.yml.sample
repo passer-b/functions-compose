@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  ui:
+    environment:
+      NO_PROXY: "example.com:8080"
+      API_URL:  "http://example.com:8080/endpoint/"
+  proxy:
+    ports:
+      - "8080:80"

@@ -1,6 +1,6 @@
 user: nobody
 hosts:
-  "localhost": # should override to your.function.host
+  "example.com": # should override to your.function.host
     listen:
       port: 80
     paths:
