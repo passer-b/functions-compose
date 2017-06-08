@@ -2,7 +2,7 @@ version: "3"
 
 services:
   api:
-    image: iron/functions:0.2.22
+    image: iron/functions:latest
     volumes:
       - "./api/data:/app/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
